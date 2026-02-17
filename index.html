@@ -34,6 +34,12 @@
         .btn:hover {
             background-color: #4a4a8c;
         }
+
+        /* Smaller heading for background changer */
+        .small-heading {
+            font-size: 16px;
+            margin-top: 15px;
+        }
     </style>
 </head>
 
@@ -77,10 +83,8 @@
             <div class="section">
                 <h2>Technical Skills<hr> </h2>
                 <ul id="myList">
-                    <li>HTML, CSS</li>
+                    <li>HTML, CSS, JavaScript (Basics)</li>
                     <li>Java</li>
-                    <!-- <li>MySQL</li>
-                    <li>Data Structures (Introductory)</li> -->
                 </ul>
                 <!-- Task 2 & 3: Dynamic List -->
                 <button class="btn" onclick="addItem()">Add Item</button>
@@ -98,11 +102,11 @@
                 </p>
 
                 <!-- Task 4: Background Color Changer -->
-                <h6>Change Background Color</h6>
+                <h3 class="small-heading">Change Background Color</h3>
                 <button class="btn" onclick="changeColor('lightblue')">Light Blue</button>
                 <button class="btn" onclick="changeColor('lightgreen')">Light Green</button>
-                <button class="btn" onclick="changeColor('#FF7F50')">Coral</button>
-                <button class="btn" onclick="changeColor('#f5f7fb')">Reset</button>
+                <button class="btn" onclick="changeColor('coral')">Coral</button>
+                <button class="btn" onclick="resetColor()">Reset</button>
             </div>
 
             <!-- Projects -->
@@ -149,12 +153,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
