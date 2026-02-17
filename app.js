@@ -7,7 +7,7 @@ function changeText() {
 let count = 1;
 function addItem() {
     let li = document.createElement("li");
-    li.innerText = "Item " + count++;
+    li.innerText = "New Item " + count++;
     document.getElementById("myList").appendChild(li);
 }
 
@@ -16,7 +16,7 @@ function removeItem() {
     let list = document.getElementById("myList");
     if (list.lastChild) {
         list.removeChild(list.lastChild);
-        count--; 
+        count--;
     }
 }
 
