@@ -6,41 +6,6 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="app.css">
-
-    <!-- Internal CSS -->
-    <style>
-        .designation {
-            font-style: italic;
-            letter-spacing: 1px;
-            color: #440980;
-        }
-
-        #special-text {
-            font-weight: 600;
-            color: #110b8a;
-        }
-
-        /* Button styling */
-        .btn {
-            margin: 5px;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #6c63ff;
-            color: white;
-            font-size: 14px;
-        }
-        .btn:hover {
-            background-color: #4a4a8c;
-        }
-
-        /* Smaller heading for background changer */
-        .small-heading {
-            font-size: 16px;
-            margin-top: 15px;
-        }
-    </style>
 </head>
 
 <body>
@@ -67,32 +32,29 @@
         <div class="cards">
             <!-- Education -->
             <div class="section">
-                <h2>Education<hr> </h2>
+                <h2>Education<hr></h2>
                 <p>
                     B.Tech in Information Technology<br>
                     Vivekanand Education Society's Intitute Of Technology (VESIT), Chembur<br>
                     2024 – 2028
                 </p>
-
-                <!-- Task 1: Change paragraph text -->
                 <p id="myParagraph">This is the original text.</p>
                 <button class="btn" onclick="changeText()">Change Text</button>
             </div>
 
             <!-- Skills -->
             <div class="section">
-                <h2>Technical Skills<hr> </h2>
+                <h2>Technical Skills<hr></h2>
                 <ul id="myList">
                     <li>HTML, CSS, JavaScript (Basics)</li>
                 </ul>
-                <!-- Task 2 & 3: Dynamic List -->
                 <button class="btn" onclick="addItem()">Add Item</button>
                 <button class="btn" onclick="removeItem()">Remove Last Item</button>
             </div>
 
             <!-- Passion -->
             <div class="section">
-                <h2>Passion<hr> </h2>
+                <h2>Passion<hr></h2>
                 <p>
                     I am passionate about technology and continuous learning.
                     I enjoy exploring new programming languages, improving my
@@ -100,7 +62,6 @@
                     that can make everyday tasks easier.
                 </p>
 
-                <!-- Task 4: Background Color Changer -->
                 <h3 class="small-heading">Change Background Color</h3>
                 <button class="btn" onclick="changeColor('lightblue')">Light Blue</button>
                 <button class="btn" onclick="changeColor('lightgreen')">Light Green</button>
@@ -110,7 +71,7 @@
 
             <!-- Projects -->
             <div class="section">
-                <h2>Academic & Past Projects<hr> </h2>
+                <h2>Academic & Past Projects<hr></h2>
                 <p>
                     • Personal Portfolio Website<br>
                     • Instagram Database Management System<br>
@@ -120,7 +81,7 @@
 
             <!-- Social Life -->
             <div class="section">
-                <h2>Social Life<hr> </h2>
+                <h2>Social Life<hr></h2>
                 <p>
                     I actively participate in college technical clubs, group projects,
                     seminars, and workshops. I enjoy collaborating with peers,
@@ -130,7 +91,7 @@
 
             <!-- Hobbies -->
             <div class="section">
-                <h2>Hobbies & Interests<hr> </h2>
+                <h2>Hobbies & Interests<hr></h2>
                 <ul>
                     <li>Coding and learning new tech</li>
                     <li>Reading technical blogs</li>
@@ -148,44 +109,47 @@
         <a href="#">Email</a>
     </footer>
 
-    <!-- Inline JavaScript -->
+    <!-- JavaScript -->
     <script>
         // Task 1: Change paragraph text
         function changeText() {
             document.getElementById("myParagraph").innerText = "The text has been changed!";
         }
 
-        // Task 2: Add specific skills dynamically
-        let skills = ["C Programming", "SQL", "Data Structures"];
-        let index = 0;
+        // Task 2: Dynamic Skills List
+        const skills = ["C Programming", "SQL", "Data Structures"];
+        let skillIndex = 0;
 
         function addItem() {
-            if (index < skills.length) {
-                let li = document.createElement("li");
-                li.innerText = skills[index++];
+            if (skillIndex < skills.length) {
+                const li = document.createElement("li");
+                li.textContent = skills[skillIndex];
                 document.getElementById("myList").appendChild(li);
+                skillIndex++;
             } else {
                 alert("All dynamic skills have been added!");
             }
         }
 
-        // Task 3: Remove last list item
         function removeItem() {
-            let list = document.getElementById("myList");
-            if (list.lastChild && list.lastChild.innerText !== "HTML, CSS, JavaScript (Basics)") {
-                list.removeChild(list.lastChild);
-                if (index > 0) index--;
+            const list = document.getElementById("myList");
+            if (list.children.length > 1) { // keep the first default item
+                list.removeChild(list.lastElementChild);
+                if (skillIndex > 0) skillIndex--;
             }
         }
 
         // Task 4: Change background color
         function changeColor(color) {
-            document.body.style.backgroundColor = color;
+            if (color === 'coral') {
+                document.body.style.backgroundColor = "#FF7F50"; // standard coral
+            } else {
+                document.body.style.backgroundColor = color;
+            }
         }
 
-        // Reset background color to original (#f5f7fb)
         function resetColor() {
-            document.body.style.backgroundColor = "#f5f7fb";
+            document.body.style.backgroundColor = "#f5f7fb"; // reset to original
         }
     </script>
 </body>
