@@ -3,6 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <title>IT Student Portfolio</title>
+    <link rel="stylesheet" href="app.css">
+
+    <style>
+        .designation {
+            font-style: italic;
+            letter-spacing: 1px;
+            color: #440980;
+        }
+        #special-text {
+            font-weight: 600;
+            color: #110b8a;
+        }
+        .btn {
+            margin: 5px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>HIMANI RUPLANI</h1>
+        <p class="designation">IT Student | Aspiring Software Developer</p>
+    </header>
+
+    <div class="container">
+        <!-- Task 1: Change Paragraph Text -->
+        <div class="section">
+            <h2>DOM Manipulation Practice<hr></h2>
+            <p id="myParagraph">This is the original text.</p>
+            <button class="btn" onclick="changeText()">Change Text</button>
+        </div>
+
+        <!-- Task 2 & 3: Dynamic List -->
+        <div class="section">
+            <h2>Dynamic List<hr></h2>
+            <ul id="myList"></ul>
+            <button class="btn" onclick="addItem()">Add Item</button>
+            <button class="btn" onclick="removeItem()">Remove Last Item</button>
+        </div>
+
+        <!-- Task 4: Background Color Changer -->
+        <div class="section">
+            <h2>Change Background Color<hr></h2>
+            <button class="btn" onclick="changeColor('lightblue')">Light Blue</button>
+            <button class="btn" onclick="changeColor('lightgreen')">Light Green</button>
+            <button class="btn" onclick="changeColor('lightyellow')">Light Yellow</button>
+            <button class="btn" onclick="changeColor('white')">Reset</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Connect with me</p>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Email</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Task 1: Change paragraph text
+        function changeText() {
+            document.getElementById("myParagraph").innerText = "The text has been changed!";
+        }
+
+        // Task 2: Add new list item
+        let count = 1;
+        function addItem() {
+            let li = document.createElement("li");
+            li.innerText = "Item " + count++;
+            document.getElementById("myList").appendChild(li);
+        }
+
+        // Task 3: Remove last list item
+        function removeItem() {
+            let list = document.getElementById("myList");
+            if (list.lastChild) {
+                list.removeChild(list.lastChild);
+                count--; // adjust count
+            }
+        }
+
+        // Task 4: Change background color
+        function changeColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IT Student Portfolio</title>
 
 
     <!-- External CSS -->
@@ -141,4 +246,4 @@
 
 
 </body>
-</html>
+</html> -->
