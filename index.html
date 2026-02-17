@@ -20,7 +20,7 @@
             color: #110b8a;
         }
 
-        /* Button styling for DOM tasks */
+        /* Button styling */
         .btn {
             margin: 5px;
             padding: 8px 12px;
@@ -67,17 +67,24 @@
                     Vivekanand Education Society's Intitute Of Technology (VESIT), Chembur<br>
                     2024 – 2028
                 </p>
+
+                <!-- Task 1: Change paragraph text -->
+                <p id="myParagraph">This is the original text.</p>
+                <button class="btn" onclick="changeText()">Change Text</button>
             </div>
 
             <!-- Skills -->
             <div class="section">
                 <h2>Technical Skills<hr> </h2>
-                <ul>
+                <ul id="myList">
                     <li>HTML, CSS, JavaScript (Basics)</li>
                     <li>Java / C</li>
                     <li>MySQL (Basics)</li>
                     <li>Data Structures (Introductory)</li>
                 </ul>
+                <!-- Task 2 & 3: Dynamic List -->
+                <button class="btn" onclick="addItem()">Add Item</button>
+                <button class="btn" onclick="removeItem()">Remove Last Item</button>
             </div>
 
             <!-- Passion -->
@@ -89,6 +96,13 @@
                     problem-solving skills, and building real-world applications
                     that can make everyday tasks easier.
                 </p>
+
+                <!-- Task 4: Background Color Changer -->
+                <h3>Change Background Color</h3>
+                <button class="btn" onclick="changeColor('lightblue')">Light Blue</button>
+                <button class="btn" onclick="changeColor('lightgreen')">Light Green</button>
+                <button class="btn" onclick="changeColor('lightyellow')">Light Yellow</button>
+                <button class="btn" onclick="changeColor('#f5f7fb')">Reset</button>
             </div>
 
             <!-- Projects -->
@@ -120,28 +134,6 @@
                     <li>Participating in college events</li>
                 </ul>
             </div>
-
-            <!-- 🔥 DOM Manipulation Practice Section -->
-            <div class="section">
-                <h2>DOM Manipulation Practice<hr></h2>
-
-                <!-- Task 1 -->
-                <p id="myParagraph">This is the original text.</p>
-                <button class="btn" onclick="changeText()">Change Text</button>
-
-                <!-- Task 2 & 3 -->
-                <h3>Dynamic List</h3>
-                <ul id="myList"></ul>
-                <button class="btn" onclick="addItem()">Add Item</button>
-                <button class="btn" onclick="removeItem()">Remove Last Item</button>
-
-                <!-- Task 4 -->
-                <h3>Background Color Changer</h3>
-                <button class="btn" onclick="changeColor('lightblue')">Light Blue</button>
-                <button class="btn" onclick="changeColor('lightgreen')">Light Green</button>
-                <button class="btn" onclick="changeColor('lightyellow')">Light Yellow</button>
-                <button class="btn" onclick="changeColor('#f5f7fb')">Reset</button>
-            </div>
         </div>
     </div>
 
@@ -157,6 +149,7 @@
     <script src="app.js"></script>
 </body>
 </html>
+
 
 
 
